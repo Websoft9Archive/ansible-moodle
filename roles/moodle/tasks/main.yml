@@ -1,0 +1,91 @@
+---
+# Moodle-LMS
+- name: Get WebServer
+  shell: nginx -v
+  register: nginx_ver
+  ignore_errors: yes
+
+  
+- name: Download Moodle-LMS
+  unarchive:
+    src: "{{ Moodle }}"
+    dest: /data/wwwroot
+    owner: apache
+    group: apache
+    remote_src: yes
+
+- name: Copy MySQL Config
+  template: src=my.cnf dest=/etc/my.cnf
+  
+- name: restart MySQL
+  service: name=mysql state=restarted enabled=yes
+
+- name: get root's password of mysql
+  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
+  register: mysql_password
+
+- name: Create moodle database
+  mysql_db:
+    name: moodle
+    state: present
+    login_user: root
+    login_password: "{{mysql_password.stdout}}"
+
+- name: Create database user for moodle
+  mysql_user:
+    name: moodle
+    password: "{{mysql_password.stdout}}"
+    priv: 'moodle.*:ALL'
+    state: present
+    login_user: root
+    login_password: "{{mysql_password.stdout}}"
+
+- name: Copy password.txt to /credentials
+  template: src=password.txt.j2  dest=/Credentials/password.txt
+
+
+- name: Copy Apache Config
+  template: src=vhost.conf dest=/etc/httpd/vhost
+
+- name: restart Apache
+  service: name=httpd state=restarted enabled=yes
+
+## 9panel
+- name: Create /data/app
+  file:
+    path: /data/apps/
+    state: directory
+
+- name: Download 9panel
+  git:
+    repo: https://github.com/Websoft9/9panel.git
+    dest: /data/apps
+
+- name: Enabled 9panel I
+  lineinfile:
+    path: /data/apps/9panel/js/websoft9.js
+    regexp: 'var set_apps=\["Example"\];'
+    line: 'var set_apps=["Moodle"];'
+
+
+- name: Permission directory
+  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
+  
+- name: Permission file
+  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+
+- name: System Upgrade
+  yum: name=* state=latest
+
+- name: Databases Random Password
+  copy: 
+    src: init.sh
+    dest: /root/
+    mode: 0750
+
+- name: Setting Startup
+  lineinfile:
+    path: /etc/rc.d/rc.local
+    regexp: '/root/init.sh'
+    line: '/root/init.sh'
+    mode: 0750
