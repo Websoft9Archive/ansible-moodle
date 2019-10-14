@@ -29,7 +29,7 @@ module.exports = [
         children: [
           '/admin-services',
           '/admin-mysql',
-          ['https://support.websoft9.com/docs/linux/webs-nginx.html','Nginx'],
+          '/admin-runtime',
           ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
       },
