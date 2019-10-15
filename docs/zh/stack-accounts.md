@@ -14,7 +14,7 @@
 
   建议通过云控制台的命令终端，运行`cat /credentials/password.txt` 获取数据库密码（参上图）
 
-  **注意**：旧版本 Moodle 上，不存在 password.txt 文件，其数据库密码是 `123456`
+  **注意**：旧版本 Moodle 上，不存在 password.txt 文件，其数据库密码是 `123456`。请在初始化安装之前务必将数据库密码修改成复杂密码，这样有助于提高数据库的安全性。
 
 > 需要登录MySQL，请参考 [MySQL可视化管理](/zh/admin-mysql.md)
 

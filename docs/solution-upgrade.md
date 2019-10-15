@@ -26,17 +26,6 @@ apt update && apt upgrade -y
 
 ## Moodle Upgrade
 
-Follow the steps below to complete the upgrade:
+Moodle provided multiple upgrade methonds, inlucdes: automatic upgrade, upload source code for upgrading, using CLI for upgrading
 
-1. Log in Moodle, go to Admin->Setting->Updates, the system will give you a reminder if there is a new upgrade package
-![Moodle updates reminder](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-updatereminder-websoft9.png)
-
-2. Click the **Upgrade** button, go to the [Moodle Install](https://metabase.com/start/) page
-
-3. The deployment package we provide is in the jar package installation mode, so on the installation page we select the **Custom install** mode.
-![Moodle install](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
-
-3. Download teh Moodle.jar pakage and upload to your instance's directory `/data/wwwroot/metabase`
-![Moodle upload](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
-
-4. Overwrite existing files and reload the Moodle
+More detail please refer to Moodle official docs [Moodle Upgrading](https://docs.moodle.org/37/en/Upgrading)

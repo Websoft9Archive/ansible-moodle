@@ -1,6 +1,6 @@
 # 部署
 
-**部署就是将 Moodle 预装包在线复制到你的云服务器中**。例如：用户在云平台购买 Moodle 之后，云平台就会自动将 Moodle 复制到对应的云服务器。
+**部署就是将 Moodle 预装环境在线复制到你的云服务器中**。例如：用户在云平台购买 Moodle 之后，云平台就会自动将 Moodle 复制到对应的云服务器。
 
 - 如果已经部署 Moodle，请进入[初始化安装](/zh/stack-installation.md) ，完成相关操作。
 - 如果没有部署 Moodle，需要先将 Moodle 部署到您的云服务器。
@@ -13,7 +13,7 @@
 
 对有云服务器使用经验的用户来说，镜像部署可以等同于“一键部署”。
 
-我们在主流的云平台上发布了 [Moodle 镜像](https://apps.websoft9.com/metabase)供用户使用。云平台一般支持三种镜像部署方式：
+我们在主流的云平台上发布了 [Moodle 镜像](https://apps.websoft9.com/moodle)供用户使用。云平台一般支持三种镜像部署方式：
 
 * 在 **选购新服务器** 的时候，找到并选取 Moodle 镜像作为服务器启动环境
 * 在 **云市场（Marketplace）**  的 Moodle 商品页面直接购买镜像
@@ -23,7 +23,7 @@
 
 **脚本部署**是指在云服务器上运行一段脚本程序，它会**自动地**将预装包在线下载到云服务器，并完成预配置
 
-我们在 Github上发布了 [Moodle 自动化部署脚本](https://github.com/Websoft9/ansible-metabase)，脚本基于 Ansible 编写。只要熟悉 Ansible，便可以实现 **无人值守（全自动化）** 的方式将 Moodle 部署到服务器。
+我们在 Github上发布了 [Moodle 自动化部署脚本](https://github.com/Websoft9/ansible-moodle)，脚本基于 Ansible 编写。只要熟悉 Ansible，便可以实现 **无人值守（全自动化）** 的方式将 Moodle 部署到服务器。
 
 ## 对比
 

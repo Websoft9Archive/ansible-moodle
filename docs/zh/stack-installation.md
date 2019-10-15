@@ -10,32 +10,33 @@
 
 ## Moodle 安装向导
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入了软件的引导首页
-![Moodle初始化页面](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入引导首页
+2. 根据系统提示，选择语言，进入下一步 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install001-websoft9.png)
 
-2. 软件的加载速度比较慢，耐心等待1-3分钟，直至出现如下的界面。
-![开始安装Moodle](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-starty-websoft9.png)
+3. 选择数据库类型，默认为【改进的MySQL】，然后进入确认路径设置（保持默认设置），进入下一步 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install002-websoft9.png)
 
-3. 点击“让我们开始吧”，接下来首先设置登录账号，完成后进入下一步
-4. 添加你的数据：可以选择使用的数据类型来连接一个需要分析的外部数据库，如果没有也可以点击“我之后再添加”，这样系统会默认给 Moodle 增加一个H2演示数据
-![配置Moodle](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-installdb-websoft9.png)
+4. 填写数据库连接信息，建议采用预装环境自带的 MySQL 数据库([不知道账号密码？](/zh/stack-accounts.html#mysql))
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install003-websoft9.png)
 
-5. 安装成功后的界面，点击“带我去Moodle”登录后台
-![Moodle安装成功](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-installss-websoft9.png)
+5. 经过几次确认后，安装进入环境检测步骤，继续后续步骤 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install004-websoft9.png)
 
-6. 以H2演示数据为例，开始数据分析工作
-![Moodle H2演示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-dashborad-websoft9.png)
+6. 设置后台账号信息，请务必设置好并牢记之。进入下一步 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install005-websoft9.png)
 
-7. Moodle有强大的系统管理能力：后台->设置，进入系统管理界面
-![Moodle Admin](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-admin-websoft9.png)
+7. 设置网站初始化信息 
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install006-websoft9.png)
 
-8. 通过“添加一个数据库”来增加一个数据分析源
-![Moodle 增加数据库](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-adddb-websoft9.png)
+8. 跟随安装提示直到完成，过程中尽量选择默认设置，勾选安装所有模块
 
-9. 通过点击“人员管理”标签，管理使用Moodle用户，包括增加用户、修改密码等
-![Moodle 人员管理](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-users-websoft9.png)
+9. 系统完成最后一步安装，建议进入Moodle后台（以管理身份登录即进入后台），体验完整功能 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install007-websoft9.png)
 
-> 需要了解更多Moodle的使用，请参考官方文档：[Moodle Documentation](https://metabase.com/docs/latest/)
+10. [注册 Moodle 官方账号](/zh/solution-more.html#moodle-注册)，打通你的 Moodle 与官方的连接
+
+> 需要了解更多Moodle的使用，请参考官方文档：[Moodle Documentation](https://docs.moodle.org)
 
 ## 常见问题
 
@@ -46,3 +47,7 @@
 #### 本部署包采用的哪个数据库来存储 Moodle 数据？
 
 是MySQL
+
+#### 是否可以采用云厂商提供的 RDS 来存储 Moodle 数据？
+
+可以

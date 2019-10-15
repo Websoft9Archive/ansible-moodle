@@ -15,9 +15,10 @@ Follow is the sample using **SendGrid's SMTP Service** to configure sending mail
    SMTP username: websoft9smpt
    SMTP password: #fdfwwBJ8f    
    ```
-2. Log in Moodle Console
-3. Enter the SMTP settings
-![Moodle SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-smtp-websoft9.png)
-4. Click the **Test Connection**, you can get the feedback *"no errors were..."* if SMTP is useful
+2. Log in to Moodle console as administrator
+3. Open **Site administrator** > **Server** > **Email** > **Outgoing mail configuration**
+   ![Moodle SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-smtp-websoft9.png)
+   ![Moodle SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-smtps-websoft9.png)
+4. Click the **Test outgoing mail configuration** to test your settings
 
 More SMTP Service(Gmail, Hotmail, QQ mail, Yahoo mail, SendGrid and so on)  settings or Issues with SMTP, please refer to Websoft9's *[SMTP Guide](https://support.websoft9.com/docs/faq/tech-smtp.html)*

@@ -54,9 +54,22 @@ sidebarDepth: 3
 ```
 通用的手动备份操作步骤如下：
 
-1. 通过WinSCP将网站目录（*/data/wwwroot/metabase*）**压缩后**再完整的下载到本地
-2. 通过phpMyAdmin导出Moodle数据库
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-export-websoft9.png)
-3. 将程序文件和数据库文件放到同一个文件夹，根据日期命名
-4. 备份工作完成
+1. 通过 WinSCP 将网站目录（*/data/wwwroot/moodle*）**压缩后**再完整的下载到本地
+2. 通过 WinSCP 将数据目录（*/data/wwwroot/moodledata*）**压缩后**再完整的下载到本地
+3. 通过 phpMyAdmin 导出 Moodle 数据库
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-export-websoft9.png)
+4. 将程序文件、数据文件和数据库文件放到同一个文件夹，根据日期命名
+5. 备份工作完成
+
+### Moodle 课程备份
+
+课程是 Moodle 最重要的资源，Moodle 后台提供了自动备份课程的功能
+
+1. 以管理员身份登录 Moodle 后台
+2. 依次打开：【网站管理】>【课程】>【备份】，开始进行备份设置
+  ![Moodle 课程备份](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-coursebk-websoft9.png)
+3. 详细设置请自行研究
+4. 依次打开：【网站管理】>【报表】>【备份】，查看备份执行情况
+  ![Moodle 查看备份](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-coursebkrp-websoft9.png)
+
 

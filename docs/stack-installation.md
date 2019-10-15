@@ -10,31 +10,39 @@ If you have completed the Moodle deployment on Cloud Platform, the following ste
 
 ## Moodle Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://domain name* or *http://Internet IP*, you will enter the register interface of Moodle
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
-2. You may wait for 1-3 Minutes for the loading of Moodle
-![Start Moodle](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-starty-websoft9.png)
+1. Using local Chrome or Firefox to visit the URL *https://domain name* or *https://Internet IP*, enter to Moodle installation page
 
-3. Click the **Let's get started** button and set your administrator account, then go to next step
-4. Add your data: you can select the type of Database which will be analyzed or  click **I'll add my data later** then Moodle will create a Demo from H2 Database
-![Add data to Moodle](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-installdb-websoft9.png)
+2. Choose a language, then go to next step
+   ![Moodle-install-language](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md01.png)
 
-5. Once you have completed the installation, click the button **Take me to Moodle** to log in Moodle Console
-![Moodle installation successful](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-installss-websoft9.png)
+3. Set the Moodle source code and data directory
+   ![Moodle set directory](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md02.png)
 
-6. Take the H2 demo data as an example to start data analysis work.
-![Moodle H2](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-dashborad-websoft9.png)
+4. Choose the database type
+   ![Moodle Choose database](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md03.png)
 
-7. Log in Moodle Console, go to **Moodle Admin** page like below
-![Moodle Admin](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-admin-websoft9.png)
+5. Fill in your database connection information ([Don't know password?](/stack-accounts.html#mysql))
+   ![Moodle set database connection](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md04.png)
 
-8. Click **Add a database** to add a new data source for Moodle
-![Moodle Data source](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-adddb-websoft9.png)
+6. Confirm the Copyright
+   ![Moodle Confirm the Copyright](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md05.png)
 
-9. Click **People** tab on the top of Moodle Admin, you can add user and modify password
-![Moodle People](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-users-websoft9.png)
+7. Installing
+   ![Moodle start install](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md06.png)
+   ![Moodle start install](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md07.png)
 
-> More useful Moodle guide, please refer to [Moodle Documentation](https://metabase.com/docs/latest/)
+8. Set administrator account
+   ![Moodle set administrator account](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md08.png)
+
+9. Set site name, short name, front page summary...
+   ![Moodle set site information](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md09.png)
+
+10. Installed successfully.
+   ![Moodle installation successfully](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md10.png)
+
+11. [Register a Moodle account](/solution-more.html#moodle-register) to connect Moodle official website for more extension
+
+> More useful Moodle guide, please refer to [Moodle Documentation](https://docs.moodle.org)
 
 ## Q&A
 
@@ -42,6 +50,10 @@ If you have completed the Moodle deployment on Cloud Platform, the following ste
 
 Your TCP:80 of Security Group Rules is not allowed so there no response from Chrome or Firefox
 
-#### Which database does this Moodle use?
+#### Which database does this Moodle package use?
 
 MySQL
+
+#### Can I use Cloud database for Moodle?
+
+Yes
