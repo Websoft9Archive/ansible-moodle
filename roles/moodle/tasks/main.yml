@@ -1,4 +1,51 @@
 ---
+# 9panel
+- name: delete www.example.com
+  file:
+    path: /data/wwwroot/www.example.com
+    state: absent
+
+- name: Enabled 9panel I
+  lineinfile:
+    path: /data/apps/9panel/js/websoft9.js
+    regexp: 'var set_apps=\["Example"\];'
+    line: 'var set_apps=["Moodle"];'
+
+# mysql
+- name: change my.ini
+  template:
+    src: my.cnf.j2
+    dest: /etc/my.cnf
+    mode: 0644
+
+- name: restart mysql
+  service:
+    name: mysqld
+    state: restarted
+
+- name: get root's password of mysql
+  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
+  register: mysql_password
+
+- name: Create moodle database
+  mysql_db:
+    name: moodle
+    state: present
+    login_user: root
+    login_password: "{{mysql_password.stdout}}"
+
+- name: Create database user for moodle
+  mysql_user:
+    name: moodle
+    password: "{{mysql_password.stdout}}"
+    priv: 'moodle.*:ALL'
+    state: present
+    login_user: root
+    login_password: "{{mysql_password.stdout}}"
+
+- name: Copy password.txt to /credentials
+  template: src=password.txt.jinja2  dest=/credentials/password.txt
+
 # Moodle-LMS
 - name: Get WebServer
   shell: nginx -v
@@ -17,66 +64,15 @@
   git:
     repo: https://github.com/moodle/moodle.git
     dest: /data/wwwroot/moodle
-
-- name: Copy MySQL Config
-  template: src=my.cnf.j2 dest=/etc/my.cnf
-  
-- name: restart MySQL
-  service: name=mysqld state=restarted enabled=yes
-
-- name: get root's password of mysql
-  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
-  register: mysql_password
-
-- name: Create moodle database
-  mysql_db:
-    name: moodle
-    state: present
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-
-- name: Create database user for moodle
-  mysql_user:
-    name: moodle
-    password: "{{mysql_password.stdout}}"
-    priv: '*.*:ALL'
-    state: present
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-
-- name: Copy password.txt to /credentials
-  template: src=password.txt.jinja2  dest=/credentials/password.txt
+    version: MOODLE_37_STABLE
 
 - name: Copy Apache Config
   template: src=vhost.conf dest=/etc/httpd/vhost
 
-# 9panel
-- name: Create /data/apps/9panel
-  file:
-    path: /data/apps/9panel
-    state: directory
-
-- name: Download 9panel
-  git:
-    repo: https://github.com/Websoft9/9panel.git
-    dest: /data/apps/9panel
-
-- name: Enabled 9panel I
-  lineinfile:
-    path: /data/apps/9panel/js/websoft9.js
-    regexp: 'var set_apps=\["Example"\];'
-    line: 'var set_apps=["Moodle"];'
-
-- name: Copy 9panel.conf to /etc/httpd/conf.d
-  template:
-    src: 9panel.conf.j2
-    dest: /etc/httpd/conf.d/9panel
-    mode: 0644
-
-
 - name: restart Apache
   service: name=httpd state=restarted enabled=yes
 
+# Change Permission
 - name: change permission of /data/wwwroot
   file:
     path: "{{item}}"
