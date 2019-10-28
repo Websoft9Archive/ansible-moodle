@@ -104,3 +104,8 @@
     regexp: '/root/init.sh'
     line: '/root/init.sh'
     mode: 0750
+
+# 初始化 on azure
+- name: initialize azure vm
+  shell:  waagent -deprovision+user --force
+  when: cloud == "azure"

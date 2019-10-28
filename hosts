@@ -2,4 +2,4 @@
 localhost
 
 [moodle]
-13.90.59.101 ansible_ssh_user=websoft9 ansible_ssh_pass=Qwerty123456 ansible_sudo_pass=Qwerty123456
+52.170.85.32 ansible_ssh_user=websoft9 ansible_ssh_pass=Qwerty123456 ansible_sudo_pass=Qwerty123456
