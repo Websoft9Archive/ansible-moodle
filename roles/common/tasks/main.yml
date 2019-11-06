@@ -1,62 +1,62 @@
----
+# ---
 
-# Centos 更新 安装基础软件工具等操作
-- block:
-  - name: System Upgrade
-    yum: name=* state=latest
+# # Centos 更新 安装基础软件工具等操作
+# - block:
+#   - name: System Upgrade
+#     yum: name=* state=latest
 
-  - name: Install EPEL
-    yum:
-      name: epel-release
-    # template:
-    #   src: '{{item.src}}'
-    #   dest: '{{item.dest}}'
-    # with_items:
-    #   - {src: epel.repo.jinja2,dest: /etc/yum.repos.d/epel.repo}
-    #   - {src: 'RPM-GPG-KEY-EPEL-{{ansible_distribution_version}}',dest: /etc/pki/rpm-gpg/}
+#   - name: Install EPEL
+#     yum:
+#       name: epel-release
+#     # template:
+#     #   src: '{{item.src}}'
+#     #   dest: '{{item.dest}}'
+#     # with_items:
+#     #   - {src: epel.repo.jinja2,dest: /etc/yum.repos.d/epel.repo}
+#     #   - {src: 'RPM-GPG-KEY-EPEL-{{ansible_distribution_version}}',dest: /etc/pki/rpm-gpg/}
 
 
-  - name: Disable SELinux
-    selinux:
-      state: disabled
+#   - name: Disable SELinux
+#     selinux:
+#       state: disabled
 
-  - name:  temporarily disable Selinux
-    shell: setenforce 0 
+#   - name:  temporarily disable Selinux
+#     shell: setenforce 0 
 
-  - name: Install Common Software
-    yum: 
-      name: [mosh,yum-utils,wget,openssl,unzip,bzip2,expect,at,vim, screen,pwgen,git, htop, yum-cron,ImageMagick, goaccess,MySQL-python,python-pip]
-      state: installed
+#   - name: Install Common Software
+#     yum: 
+#       name: [mosh,yum-utils,wget,openssl,unzip,bzip2,expect,at,vim, screen,pwgen,git, htop, yum-cron,ImageMagick, goaccess,MySQL-python,python-pip]
+#       state: installed
     
-  - name: Configuration yum-cron
-    copy: src=yum-cron.conf dest=/etc/yum/
+#   - name: Configuration yum-cron
+#     copy: src=yum-cron.conf dest=/etc/yum/
 
-  - name: Start yum-cron
-    service: name=yum-cron state=started enabled=yes
+#   - name: Start yum-cron
+#     service: name=yum-cron state=started enabled=yes
   
-  when: ansible_distribution == 'CentOS'
+#   when: ansible_distribution == 'CentOS'
 
-# Ubuntu 更新 安装基础软件工具等操作
-- block:
-  - name: Upgrade all packages to the latest version
-    apt:
-      name: "*"
-      state: latest
-      update_cache: yes
-      force_apt_get: True
-      autoremove: yes
+# # Ubuntu 更新 安装基础软件工具等操作
+# - block:
+#   - name: Upgrade all packages to the latest version
+#     apt:
+#       name: "*"
+#       state: latest
+#       update_cache: yes
+#       force_apt_get: True
+#       autoremove: yes
 
-  - name: Install Common Software
-    apt: 
-      name: [mosh,curl,gnupg2,ca-certificates,lsb-release,wget,openssl,unzip,bzip2,expect,at,vim,screen,pwgen,git,htop,imagemagick,goaccess,python3-mysqldb,python-mysqldb,python-pip,python3-pip,unattended-upgrades,python3-pexpect,python-pexpect]
-      state: latest
-      force_apt_get: True
-      allow_unauthenticated: yes
+#   - name: Install Common Software
+#     apt: 
+#       name: [mosh,curl,gnupg2,ca-certificates,lsb-release,wget,openssl,unzip,bzip2,expect,at,vim,screen,pwgen,git,htop,imagemagick,goaccess,python3-mysqldb,python-mysqldb,python-pip,python3-pip,unattended-upgrades,python3-pexpect,python-pexpect]
+#       state: latest
+#       force_apt_get: True
+#       allow_unauthenticated: yes
 
-  - name: Configuration unattended-upgrades
-    copy: src=20auto-upgrades dest=/etc/apt/apt.conf.d/
+#   - name: Configuration unattended-upgrades
+#     copy: src=20auto-upgrades dest=/etc/apt/apt.conf.d/
   
-  when: ansible_distribution == 'Ubuntu'
+#   when: ansible_distribution == 'Ubuntu'
 
 - block:
   - name: Create swap Space
