@@ -1,15 +1,23 @@
-## 部署
+# 核心任务
+
 - name: moodle
-  hosts: moodle
+  hosts: moodle  
   become: yes
   become_method: sudo
+  vars_files:
+    - vars/main.yml
 
   roles:
-    - {role: common, tags: "common"}
-    - {role: apache, tags: "apache"}
-    - {role: mysql, tags: "mysql"}
-    - {role: php-fpm, tags: "php-fpm"}
-    - {role: lamp, tags: "lamp"}
-    - {role: phpmyadmin, tags: "phpmyadmin"}
-    - {role: 9panel, tags: "9panel"}
-    - {role: moodle, tags: "moodle"}
+    - role: role_common
+    - role: role_cloud
+    - role: role_apache
+    - role: role_mysql
+    - role: role_php-fpm
+    - role: role_inotify_watch
+    - role: role_lamp
+    - role: role_init_password
+    - role: role_phpmyadmin
+    - role: role_9panel
+    - role: moodle
+    - role: role_end
+    
