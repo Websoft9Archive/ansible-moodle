@@ -23,34 +23,9 @@
     name: mysqld
     state: restarted
 
-- name: get root's password of mysql
-  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
-  register: mysql_password
-
-- name: Create moodle database
-  mysql_db:
-    name: moodle
-    state: present
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-
-- name: Create database user for moodle
-  mysql_user:
-    name: moodle
-    password: "{{mysql_password.stdout}}"
-    priv: 'moodle.*:ALL'
-    state: present
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-
-- name: Copy password.txt to /credentials
-  template: src=password.txt.jinja2  dest=/credentials/password.txt
-
 # Moodle-LMS
 - name: Get WebServer
-  shell: nginx -v
-  register: nginx_ver
-  ignore_errors: yes
+  shell: 
 
 - name: Create Directory
   file:
