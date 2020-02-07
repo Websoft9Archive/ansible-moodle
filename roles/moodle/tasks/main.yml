@@ -24,9 +24,6 @@
     state: restarted
 
 # Moodle-LMS
-- name: Get WebServer
-  shell: 
-
 - name: Create Directory
   file:
     path: /data/wwwroot/moodle
