@@ -1,7 +1,7 @@
 # 核心任务
 
 - name: moodle
-  hosts: moodle  
+  hosts: all  
   become: yes
   become_method: sudo
   vars_files:
