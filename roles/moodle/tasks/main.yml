@@ -1,17 +1,17 @@
 ---
 # 9panel
-- name: delete www.example.com
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
-
 - name: Enabled 9panel I
   lineinfile:
     path: /data/apps/9panel/js/websoft9.js
     regexp: 'var set_apps=\["Example"\];'
     line: 'var set_apps=["Moodle"];'
 
-# mysql
+# Moodle-LMS
+- name: delete www.example.com
+  file:
+    path: /data/wwwroot/www.example.com
+    state: absent
+
 - name: change my.ini
   template:
     src: my.cnf.j2
@@ -23,7 +23,6 @@
     name: mysqld
     state: restarted
 
-# Moodle-LMS
 - name: Create Directory
   file:
     path: /data/wwwroot/moodle
@@ -36,25 +35,9 @@
   git:
     repo: https://github.com/moodle/moodle.git
     dest: /data/wwwroot/moodle
-    version: MOODLE_37_STABLE
+    version: "{{moodle_version}}"
 
-- name: Copy Apache Config
-  template: src=vhost.conf dest=/etc/httpd/vhost
-
-- name: restart Apache
-  service: name=httpd state=restarted enabled=yes
-
-# Change Permission
-- name: change permission of /data/wwwroot
-  file:
-    path: "{{item}}"
-    owner: apache
-    group: apache
-    recurse: yes
-  with_items:
-    - /data/wwwroot
-    - /data/apps
-
+# 系统通用
 - name: Permission directory
   shell: find /data/wwwroot -type d -exec chmod 750 {} \;
   
@@ -64,20 +47,13 @@
 - name: System Upgrade
   yum: name=* state=latest
 
-- name: Databases Random Password
-  copy: 
-    src: init.sh
-    dest: /root/
-    mode: 0750
+# 根据不同的基础环境分别处理
+- block:
+  - name: change owner&group for Apache
+    shell: chown -R {{nextcloud_owner}}:{{nextcloud_owner}} /data/wwwroot
 
-- name: Setting Startup
-  lineinfile:
-    path: /etc/rc.d/rc.local
-    regexp: '/root/init.sh'
-    line: '/root/init.sh'
-    mode: 0750
-
-# 初始化 on azure
-- name: initialize azure vm
-  shell:  waagent -deprovision+user --force
-  when: cloud == "azure"
+  - name: Copy Apache or Nginx vhost configuration
+    template: src={{nextcloud_vhost_src}} dest={{nextcloud_vhost_dir}}
+    
+  - name: restart Apache or Nginx
+    service: name={{nextcloud_service}} state=restarted enabled=yes
