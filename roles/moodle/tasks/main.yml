@@ -57,9 +57,6 @@
 - name: Permission file
   shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
-- name: System Upgrade
-  yum: name=* state=latest
-
 # 根据不同的基础环境分别处理
 - block:
   - name: change owner&group for Apache
