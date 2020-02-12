@@ -4,6 +4,12 @@ moodle_version: v3.8.1
 #Web服务器：apache | nginx，通过交互式选择获取
 moodle_webs: apache
 
+# 默认值
+moodle_vhost_dir: /etc/httpd/vhost
+moodle_vhost_src: vhost.conf
+moodle_service: httpd
+moodle_owner: apache
+
 php_runtime_meta:
   CentOS:
     apache:
