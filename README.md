@@ -18,13 +18,13 @@
 
 ## 组件
 
-包含的核心组件为：Moodle + LAMP（Apache/Nginx + MySQL + PHP）
+包含的核心组件为：Moodle + Apache/Nginx + MySQL + PHP
 
 更多请见[参数表](/docs/zh/stack-components.md)
 
 ## 本项目安装的是 Moodle 最新版吗？
 
-本项目是下载GitHub上[Moodle源码](https://github.com/moodle/moodle/releases)安装，具体版本号可在 Moodle 仓库的 Branch 的 Tags 列表查询，根据需求更改 roles - moodle - defaults -main.yml 文件中的 ```moodle_version``` 版本号。
+本项目是下载GitHub上[Moodle源码](https://github.com/moodle/moodle/releases)安装，具体版本号可在 [Moodle 仓库](https://github.com/moodle/moodle)的 [tags列表](https://github.com/moodle/moodle/tree/v3.8.1) 查询，根据需求更改[main.yml 文件](/roles/moodle/defaults/main.yml) 中的 ```moodle_version``` 版本号。
 
 我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装最新的 Moodle 版本。
 
