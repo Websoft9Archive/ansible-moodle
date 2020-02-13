@@ -11,22 +11,29 @@
 
 | 条件       | 详情       | 备注  |
 | ------------ | ------------ | ----- |
-| 操作系统       | CentOS7.x       |    |
-| 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 |  |
-| 私有云|  KVM, VMware, VirtualBox, OpenStack |  |
+| 操作系统       | CentOS7.x       |   |
+| 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 | 可选 |
+| 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
 | 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
 ## 组件
 
 包含的核心组件为：Moodle + Apache/Nginx + MySQL + PHP
 
-更多请见[参数表](/docs/zh/stack-components.md)
+更多请见：[参数表](/docs/zh/stack-components.md)
 
 ## 本项目安装的是 Moodle 最新版吗？
 
-本项目是下载GitHub上[Moodle源码](https://github.com/moodle/moodle/releases)安装，具体版本号可在 [Moodle 仓库](https://github.com/moodle/moodle)的 [tags列表](https://github.com/moodle/moodle/tags) 查询，根据需求更改[main.yml 文件](/roles/moodle/defaults/main.yml) 中的 ```moodle_version``` 版本号。
+本项目通过下载[Moodle源码](https://github.com/moodle/moodle/releases)进行安装，其中版本号存储在：[role/moodle/default/main.yml](/roles/moodle/defaults/main.yml)
 
-我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装最新的 Moodle 版本。
+```
+#Moodle版本，需定期维护
+moodle_version: v3.8.1
+```
+
+如果你想修改版本号，请先查看 Moodle 仓库 [tags](https://github.com/moodle/moodle/tags) 标签值，再修改上面的 `moodle_version` 变量。
+
+我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
 ## 安装指南
 
