@@ -26,8 +26,8 @@
     state: absent
 
 - name: change my.cnf
-  template:
-    src: my.cnf.j2
+  copy:
+    src: my.cnf
     dest: /etc/my.cnf
     mode: 0644
 
@@ -63,7 +63,7 @@
     shell: chown -R {{moodle_owner}}:{{moodle_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    template: src={{moodle_vhost_src}} dest={{moodle_vhost_dir}}
+    copy: src={{moodle_vhost_src}} dest={{moodle_vhost_dir}}
     
   - name: restart Apache or Nginx
     service: name={{moodle_service}} state=restarted enabled=yes
