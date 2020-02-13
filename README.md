@@ -11,22 +11,22 @@
 
 | 条件       | 详情       | 备注  |
 | ------------ | ------------ | ----- |
-| 操作系统       | CentOS7.x, Ubuntu18.04, Amazon Linux2       |    |
+| 操作系统       | CentOS7.x       |    |
 | 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 |  |
 | 私有云|  KVM, VMware, VirtualBox, OpenStack |  |
 | 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
 ## 组件
 
-包含的核心组件为：LAMP（Apache + MySQL + PHP）
+包含的核心组件为：Moodle + LAMP（Apache/Nginx + MySQL + PHP）
 
 更多请见[参数表](/docs/zh/stack-components.md)
 
 ## 本项目安装的是 Moodle 最新版吗？
 
-本项目是下载[Moodle源码](https://github.com/moodle/moodle/releases)安装。
+本项目是下载GitHub上[Moodle源码](https://github.com/moodle/moodle/releases)安装，具体版本号可在 Moodle 仓库的 Branch 的 Tags 列表查询，根据需求更改 roles - moodle - defaults -main.yml 文件中的 ```moodle_version``` 版本号。
 
-我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装所需的Redis版本。
+我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装最新的 Moodle 版本。
 
 ## 安装指南
 
@@ -58,3 +58,4 @@ wget -N https://raw.githubusercontent.com/Websoft9/linux/master/ansible_script/i
 ## To do
 
 * 添加 Nginx 支持
+* 添加支持Ubuntu18.04, Amazon Linux2
