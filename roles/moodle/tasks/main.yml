@@ -40,8 +40,6 @@
   file:
     path: /data/wwwroot/moodle
     state: directory
-    owner: apache
-    group: apache
     mode: 0755
   
 - name: Download Moodle-LMS
