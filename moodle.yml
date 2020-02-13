@@ -25,7 +25,7 @@
     - {role: role_cloud, tags: "role_cloud"}
     - {role: role_apache, tags: "role_apache", when: moodle_webs == 'apache'}
     - {role: role_nginx, tags: "role_nginx", when: moodle_webs == 'nginx'}
-    - {role: role_mysql, tags: "role_mysql"}
+    #- {role: role_mysql, tags: "role_mysql"}
     - {role: role_php-fpm, tags: "role_php-fpm"}
     - {role: role_inotify_watch, tags: "role_inotify_watch"}
     - {role: role_lamp, tags: "role_lamp", when: moodle_webs == 'apache'}
