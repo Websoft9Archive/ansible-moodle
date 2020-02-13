@@ -25,7 +25,7 @@
     path: /data/wwwroot/www.example.com
     state: absent
 
-- name: change my.ini
+- name: change my.cnf
   template:
     src: my.cnf.j2
     dest: /etc/my.cnf
