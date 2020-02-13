@@ -31,7 +31,7 @@
 moodle_version: v3.8.1
 ```
 
-如果你想修改版本号，请先查看 Moodle 仓库 [tags](https://github.com/moodle/moodle/tags) 标签值，再修改上面的 `moodle_version` 变量。
+如果你想修改版本号，请先查看 Moodle 仓库 [tags](https://github.com/moodle/moodle/tags) 标签值，再修改上面的 `moodle_version` 变量值。
 
 我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
