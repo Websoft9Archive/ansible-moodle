@@ -24,4 +24,8 @@ init_db:
 init_application:
   moodle:
     service: php-fpm
+    database: moodle 
+    database_user: moodle
+    database_host: localhost
+    database_password: "123456"
     
