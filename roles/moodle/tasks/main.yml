@@ -1,4 +1,17 @@
 ---
+#引入PHP运行环境元数据，并初始化
+- include_vars: roles/role_php-fpm/vars/php_runtime_meta.yml
+
+#Create var for this playbook
+- set_fact:
+    moodle_vhost_dir: "{{php_runtime_meta[ansible_distribution][moodle_webs].vhost_dir}}"
+    moodle_vhost_src: "{{php_runtime_meta[ansible_distribution][moodle_webs].vhost_src}}"
+    moodle_service: "{{php_runtime_meta[ansible_distribution][moodle_webs].service}}"
+    moodle_owner: "{{php_runtime_meta[ansible_distribution][moodle_webs].owner}}"
+
+- debug:
+    msg: runtime {{ moodle_vhost_dir }}, {{moodle_vhost_src}}, {{moodle_service}}, {{moodle_owner}}, {{moodle_webs}}, {{ansible_distribution}}
+
 # 9panel
 - name: Enabled 9panel I
   lineinfile:
@@ -44,16 +57,13 @@
 - name: Permission file
   shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
-- name: System Upgrade
-  yum: name=* state=latest
-
 # 根据不同的基础环境分别处理
 - block:
   - name: change owner&group for Apache
-    shell: chown -R {{nextcloud_owner}}:{{nextcloud_owner}} /data/wwwroot
+    shell: chown -R {{moodle_owner}}:{{moodle_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    template: src={{nextcloud_vhost_src}} dest={{nextcloud_vhost_dir}}
+    template: src={{moodle_vhost_src}} dest={{moodle_vhost_dir}}
     
   - name: restart Apache or Nginx
-    service: name={{nextcloud_service}} state=restarted enabled=yes
+    service: name={{moodle_service}} state=restarted enabled=yes
