@@ -21,14 +21,14 @@
       src: https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-all-languages.zip
       dest: /data/apps
       remote_src: yes
-    when: phpver == "54"
+    when: php_version == "5.4"
 
   - name: Dowload phpMyAdmin
     unarchive:
       src: https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.zip
       dest: /data/apps
       remote_src: yes
-    when: phpver != "54"
+    when: php_version != "5.4"
 
   - name: phpMyadmin directory rename
     shell: mv /data/apps/phpMyAdmin-* /data/apps/phpmyadmin
@@ -48,7 +48,7 @@
         name: phpmyadmin
         state: import
         target: /data/apps/phpmyadmin/examples/create_tables.sql
-      when: phpver == "54"
+      when: php_version == "5.4"
 
     - name: Active phpMyAdmin 4.x Advanced Features
       mysql_db:
@@ -58,7 +58,7 @@
         name: phpmyadmin
         state: import
         target: /data/apps/phpmyadmin/sql/create_tables.sql
-      when: phpver != "54"
+      when: php_version != "5.4"
     when: check_mysqlserver.stdout == '0'
 
 

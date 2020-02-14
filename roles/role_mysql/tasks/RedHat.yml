@@ -67,7 +67,7 @@
     service: name=mysqld state=restarted enabled=yes
 
   - name: Change MySQL57+ root user password 
-    shell: mysqladmin -u root --password="{{ mysql_root_temp_password.stdout }}" password "{{mysql_root_password}}"
+    shell: mysqladmin -u root --password="{{ mysql_root_temp_password.stdout }}" password "{{mysql_root_password}}" --socket=/var/lib/mysql/mysql.sock
 
 
 

@@ -61,10 +61,11 @@
     - {src:  /etc/redis/redis.conf,dest: /etc/redis.conf} 
     - {src: /data/redis,dest: /var/lib/redis} 
 
+
 - name: Check redis Version
   shell: /usr/local/bin/redis-server -v
   register: redis_version
   args:
     executable: /bin/bash
-  notify: [redis Version,Check redis Server]
+  notify: redis Version
 
