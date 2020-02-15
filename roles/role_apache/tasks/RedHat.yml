@@ -64,7 +64,7 @@
 
 - name: Link Apache service
   file:
-    src: /usr/lib/systemd/system/httd.service
+    src: /usr/lib/systemd/system/httpd.service
     dest: /usr/lib/systemd/system/apache.service
     state: link
 
