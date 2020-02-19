@@ -26,7 +26,7 @@
     state: absent
 
 - name: change my.cnf
-  copy:
+  template:
     src: my.cnf
     dest: /etc/my.cnf
     mode: 0644
