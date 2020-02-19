@@ -1,7 +1,7 @@
 - block:
   - name: install the IUS rpm from a remote repo
     yum:
-      name: https://rhel7.iuscommunity.org/ius-release.rpm
+      name: "{{apache_ius_url}}"
       state: present
 
   - name: Install Apache
