@@ -14,21 +14,27 @@
       default: 1
 
   vars:
+
     webs_select:
       '1': 'apache'
       '2': 'nginx'
+
     infrastructure_select:
       '1': 'LAMP'
       '2': 'LNMP'
+
     moodle_webs: "{{webs_select[webs_selection]}}" 
 
-    9panel_set_infrastructure: "{{infrastructure_select[webs_selection]}}" 
-    9panel_set_apps: 
-       - Example
+    w9panel_set_infrastructure: "{{infrastructure_select[webs_selection]}}" 
+    w9panel_set_apps: 
+      - Moodle
   
   pre_tasks:
     - include_vars: roles/role_cloud/vars/cloud_download_url.yml
       when: region == '1' or region == 1
+    
+    - debug:
+        msg: Moodle will be installed on {{w9panel_set_infrastructure}}, OS is {{ansible_distribution}}, region code is {{region}}
 
   roles:
     - {role: role_common, tags: "role_common"}
