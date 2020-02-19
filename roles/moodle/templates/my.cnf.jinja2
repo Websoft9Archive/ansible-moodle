@@ -1,14 +1,20 @@
 [mysqld]
+bind-address=0.0.0.0
 datadir=/data/mysql
 socket=/var/lib/mysql/mysql.sock
-innodb_file_format = Barracuda
-innodb_file_per_table = 1   
-innodb_large_prefix = ON
-collation-server = utf8mb4_unicode_ci
-skip-character-set-client-handshake
+{% if (mysql_version == 5.7 or mysql_version == '5.7') %}
+validate_password=OFF
+{% endif %}
+{% if (mysql_version == 8.0 or mysql_version == '8.0') %}
+validate_password.check_user_name=OFF
+validate_password.length=4
+validate_password.mixed_case_count=0
+validate_password.number_count=0
+validate_password.policy=0
+validate_password.special_char_count=0
+{% endif %}
 init-connect = 'SET NAMES utf8mb4'
 character-set-server = utf8mb4
-skip-name-resolve
 back_log = 300
 max_connections = 214
 max_connect_errors = 6000
@@ -24,18 +30,16 @@ sort_buffer_size = 8M
 join_buffer_size = 8M
 key_buffer_size = 4M
 thread_cache_size = 8
-query_cache_type = 1
-query_cache_size = 8M
-query_cache_limit = 2M
 ft_min_word_len = 4
 log_bin = mysql-bin
 binlog_format = mixed
 expire_logs_days = 7
 performance_schema = 0
-#lower_case_table_names = 1
 server_id=1
 skip-external-locking
 default_storage_engine = InnoDB
+innodb_file_format = Barracuda   
+innodb_large_prefix = ON
 innodb_file_per_table = 1
 innodb_open_files = 500
 innodb_buffer_pool_size = 64M
@@ -55,6 +59,10 @@ myisam_max_sort_file_size = 10G
 myisam_repair_threads = 1
 interactive_timeout = 28800
 wait_timeout = 28800
+{% if mysql_version == '5.7' or mysql_version == '8.0' %}
+default_authentication_plugin=mysql_native_password
+{% endif %}
+
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
