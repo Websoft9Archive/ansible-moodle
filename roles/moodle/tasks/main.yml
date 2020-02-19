@@ -27,7 +27,7 @@
 
 - name: change my.cnf
   template:
-    src: my.cnf
+    src: my.cnf.jinja2
     dest: /etc/my.cnf
     mode: 0644
 
