@@ -6,7 +6,7 @@
   vars_files:
     - vars/main.yml 
   vars_prompt:
-    - name: 'webserver_select'
+    - name: 'webs_selection'
       prompt: "\nWhich Web-Server do you want to use? [ 1/2 ] \n\n
       1: Apache\n
       2: Nginx\n"
@@ -14,25 +14,38 @@
       default: 1
 
   vars:
-    temp_ver:
+
+    webs_select:
       '1': 'apache'
       '2': 'nginx'
-    moodle_webs: "{{temp_ver[webserver_select]}}" 
+
+    infrastructure_select:
+      '1': 'LAMP'
+      '2': 'LNMP'
+
+    moodle_webs: "{{webs_select[webs_selection]}}" 
+
+    w9panel_set_infrastructure: "{{infrastructure_select[webs_selection]}}" 
+    w9panel_set_apps: 
+      - Moodle
   
   pre_tasks:
     - include_vars: roles/role_cloud/vars/cloud_download_url.yml
       when: region == '1' or region == 1
+    
+    - debug:
+        msg: Moodle will be installed on {{w9panel_set_infrastructure}}, OS is {{ansible_distribution}}, region code is {{region}}
 
   roles:
     - {role: role_common, tags: "role_common"}
     - {role: role_cloud, tags: "role_cloud"}
     - {role: role_apache, tags: "role_apache", when: moodle_webs == 'apache'}
-    - {role: role_nginx, tags: "role_nginx", when: moodle_webs == 'nginx'}
+    - {role: role_nginx, tags: "role_nginx", when: moodle_webs != 'apache'}
     - {role: role_mysql, tags: "role_mysql"}
     - {role: role_php-fpm, tags: "role_php-fpm"}
     - {role: role_inotify_watch, tags: "role_inotify_watch"}
     - {role: role_lamp, tags: "role_lamp", when: moodle_webs == 'apache'}
-    - {role: role_lnmp, tags: "role_lnmp", when: moodle_webs == 'nginx'}
+    - {role: role_lnmp, tags: "role_lnmp", when: moodle_webs != 'apache'}
     - {role: role_phpmyadmin, tags: "role_phpmyadmin"}
     - {role: role_9panel, tags: "role_9panel"}
     - {role: role_redis, tags: "role_redis"}

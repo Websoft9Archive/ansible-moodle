@@ -12,13 +12,6 @@
 - debug:
     msg: runtime {{ moodle_vhost_dir }}, {{moodle_vhost_src}}, {{moodle_service}}, {{moodle_owner}}, {{moodle_webs}}, {{ansible_distribution}}
 
-# 9panel
-- name: Enabled 9panel I
-  lineinfile:
-    path: /data/apps/9panel/js/websoft9.js
-    regexp: 'var set_apps=\["Example"\];'
-    line: 'var set_apps=["Moodle"];'
-
 # Moodle-LMS
 - name: delete www.example.com
   file:
