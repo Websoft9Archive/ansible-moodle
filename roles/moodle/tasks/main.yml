@@ -17,15 +17,8 @@
     msg: runtime {{ moodle_vhost_dir }}, {{moodle_vhost_src}}, {{moodle_service}}, {{moodle_owner}}, {{moodle_webs}}, {{ansible_distribution}}
 
 # Moodle-LMS
-- name: delete www.example.com
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
-
-- name: delete existing moodle directory
-  file:
-    path: /data/wwwroot/{{moodle_name}}
-    state: absent
+- name: Remove extra dir
+  shell: rm -rf /data/wwwroot/*
 
 - name: Create Directory
   file:
@@ -38,9 +31,6 @@
     repo: "{{moodle_download_url}}"
     dest: /data/wwwroot/moodle
     version: "{{moodle_version}}"
-
-- name: Rename directory name
-  shell: mv /data/wwwroot/* /data/wwwroot/{{moodle_name}}
 
 - name: change my.cnf
   template:
