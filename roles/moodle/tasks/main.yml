@@ -8,6 +8,10 @@
     moodle_vhost_src: "{{php_runtime_meta[ansible_distribution][moodle_webs].vhost_src}}"
     moodle_service: "{{php_runtime_meta[ansible_distribution][moodle_webs].service}}"
     moodle_owner: "{{php_runtime_meta[ansible_distribution][moodle_webs].owner}}"
+    moodle_name: "moodle"
+    moodle_title: "Moodle"
+    moodle_download_url: "https://github.com/moodle/moodle.git"
+    moodle_version: "v3.8.1"
 
 - debug:
     msg: runtime {{ moodle_vhost_dir }}, {{moodle_vhost_src}}, {{moodle_service}}, {{moodle_owner}}, {{moodle_webs}}, {{ansible_distribution}}
@@ -20,8 +24,20 @@
 
 - name: delete existing moodle directory
   file:
-    path: /data/wwwroot/moodle
+    path: /data/wwwroot/{{moodle_name}}
     state: absent
+
+- name: Create Directory
+  file:
+    path: /data/wwwroot/{{moodle_name}}
+    state: directory
+    mode: 0755
+  
+- name: Download Moodle-LMS
+  git:
+    repo: "{{moodle_download_url}}"
+    dest: /data/wwwroot/moodle
+    version: "{{moodle_version}}"
 
 - name: change my.cnf
   template:
@@ -33,18 +49,6 @@
   service:
     name: mysqld
     state: restarted
-
-- name: Create Directory
-  file:
-    path: /data/wwwroot/moodle
-    state: directory
-    mode: 0755
-  
-- name: Download Moodle-LMS
-  git:
-    repo: https://github.com/moodle/moodle.git
-    dest: /data/wwwroot/moodle
-    version: "{{moodle_version}}"
 
 # 系统通用
 - name: Permission directory
