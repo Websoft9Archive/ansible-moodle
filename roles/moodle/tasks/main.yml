@@ -25,6 +25,11 @@
     path: /data/wwwroot/www.example.com
     state: absent
 
+- name: delete existing moodle directory
+  file:
+    path: /data/wwwroot/moodle
+    state: absent
+
 - name: change my.cnf
   template:
     src: my.cnf.jinja2
