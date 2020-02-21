@@ -30,6 +30,9 @@
     dest: /data/wwwroot/moodle
     version: "{{moodle_version}}"
 
+- name: Rename dir name
+  shell: if [ ! -d "/data/wwwroot/{{moodle_name}}" ]; then mv *{{moodle_name}}* {{moodle_name}}; fi
+
 - name: change my.cnf
   template:
     src: my.cnf.jinja2
