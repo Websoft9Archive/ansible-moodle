@@ -31,7 +31,7 @@
     version: "{{moodle_version}}"
 
 - name: Rename dir name
-  shell: if [ ! -d "/data/wwwroot/{{moodle_name}}" ]; then mv *{{moodle_name}}* {{moodle_name}}; fi
+  shell: cd /data/wwwroot; if [ ! -d "{{moodle_name}}" ]; then mv *{{moodle_name}}* {{moodle_name}}; fi
 
 - name: change my.cnf
   template:
