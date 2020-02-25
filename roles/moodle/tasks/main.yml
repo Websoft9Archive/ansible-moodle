@@ -4,10 +4,10 @@
 
 #Modify var for this playbook
 - set_fact:
-    moodle_vhost_dir: "{{php_runtime_meta[ansible_distribution][moodle_webs].vhost_dir}}"
-    moodle_vhost_src: "{{php_runtime_meta[ansible_distribution][moodle_webs].vhost_src}}"
-    moodle_service: "{{php_runtime_meta[ansible_distribution][moodle_webs].service}}"
-    moodle_owner: "{{php_runtime_meta[ansible_distribution][moodle_webs].owner}}"
+    moodle_vhost_dir: "{{php_runtime_meta[ansible_os_family][moodle_webs].vhost_dir}}"
+    moodle_vhost_src: "{{php_runtime_meta[ansible_os_family][moodle_webs].vhost_src}}"
+    moodle_service: "{{php_runtime_meta[ansible_os_family][moodle_webs].service}}"
+    moodle_owner: "{{php_runtime_meta[ansible_os_family][moodle_webs].owner}}"
 
 - debug:
     msg: runtime {{ moodle_vhost_dir }}, {{moodle_vhost_src}}, {{moodle_service}}, {{moodle_owner}}, {{moodle_webs}}, {{ansible_distribution}}
