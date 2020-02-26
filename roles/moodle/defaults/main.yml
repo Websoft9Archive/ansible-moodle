@@ -7,5 +7,5 @@ moodle_service: httpd
 moodle_owner: apache
 moodle_name: "moodle"
 moodle_title: "Moodle"
-moodle_download_url: "https://github.com/moodle/moodle.git"
-moodle_version: "v3.8.1"  #版本号需定期维护
+#下载链接需定期维护
+moodle_download_url: "https://download.moodle.org/download.php/stable38/moodle-latest-38.zip"

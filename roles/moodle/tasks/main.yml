@@ -15,20 +15,13 @@
 # Moodle-LMS
 - name: Remove extra dir
   shell: |
-    rm -rf /data/wwwroot/www.example.com
-    rm -rf /data/wwwroot/{{moodle_name}}
+    rm -rf /data/wwwroot/*{{moodle_name}}*
 
-- name: Create Directory
-  file:
-    path: /data/wwwroot/{{moodle_name}}
-    state: directory
-    mode: 0755
-  
 - name: Download Moodle-LMS
-  git:
-    repo: "{{moodle_download_url}}"
-    dest: /data/wwwroot/moodle
-    version: "{{moodle_version}}"
+  unarchive:
+    src: "{{moodle_download_url}}"
+    dest: /data/wwwroot/
+    remote_src: yes
 
 - name: Rename dir name
   shell: cd /data/wwwroot; if [ ! -d "{{moodle_name}}" ]; then mv *{{moodle_name}}* {{moodle_name}}; fi
@@ -46,10 +39,9 @@
 
 # 系统通用
 - name: Permission directory
-  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
-  
-- name: Permission file
-  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+  shell: |
+    find /data/wwwroot -type d -exec chmod 750 {} \;
+    find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
 # 根据不同的基础环境分别处理
 - block:
@@ -57,7 +49,7 @@
     shell: chown -R {{moodle_owner}}:{{moodle_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    copy: src={{moodle_vhost_src}} dest={{moodle_vhost_dir}}
+    template: src={{moodle_vhost_src}} dest={{moodle_vhost_dir}}
     
   - name: restart Apache or Nginx
     service: name={{moodle_service}} state=restarted enabled=yes
