@@ -5,6 +5,7 @@ moodle_vhost_dir: /etc/httpd/vhost
 moodle_vhost_src: vhost.conf
 moodle_service: httpd
 moodle_owner: apache
+moodle_db_password: "123456"
 moodle_name: "moodle"
 moodle_title: "Moodle"
 #下载链接需定期维护
