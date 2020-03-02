@@ -24,14 +24,14 @@
 
 ## 本项目安装的是 Moodle 最新版吗？
 
-本项目通过下载[Moodle源码](https://github.com/moodle/moodle/releases)进行安装，其中版本号存储在：[role/moodle/default/main.yml](/roles/moodle/defaults/main.yml)
+本项目通过下载[Moodle源码](https://github.com/moodle/moodle/releases)进行安装，其中下载链接存储在：[role/moodle/default/main.yml](/roles/moodle/defaults/main.yml)，可根据需求更改[main.yml 文件](/roles/moodle/defaults/main.yml) 中的 ```moodle_download_url``` 来安装最新版本。
 
 ```
-#Moodle版本，需定期维护
-moodle_version: v3.8.1
+#Moodle下载链接，需定期更新维护
+moodle_download_url: "https://download.moodle.org/download.php/stable38/moodle-latest-38.zip"
 ```
 
-如果你想修改版本号，请先查看 Moodle 仓库 [tags](https://github.com/moodle/moodle/tags) 标签值，再修改上面的 `moodle_version` 变量值。
+如果你想修改版本号，请先查看 Moodle 仓库 [release](https://github.com/moodle/moodle/releases) 页面，找到对应版本的 moodle 下载链接，再修改 [role/moodle/default/main.yml](/roles/moodle/defaults/main.yml) 文件中的 `moodle_download_url` 变量值。
 
 我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
