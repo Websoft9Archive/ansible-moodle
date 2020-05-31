@@ -19,18 +19,9 @@ mysql_users:
    host: localhost
    priv: 'moodle.*:ALL'
 
-# 初始化MySQL root密码
+# init all users password for MySQL
 init_db: 
-    mysql:
-      user: root
-      password: "123456"  
-  
-# 应用数据库信息
-init_application:
-  moodle:
-    service: php-fpm
-    database: moodle 
-    database_user: moodle
-    database_host: localhost
-    database_password: "123456"
-    
+  mysql:
+    admin: root
+    users: ["moodle"]
+    password: "123456"
