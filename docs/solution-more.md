@@ -47,7 +47,7 @@ Once completed your Moodle installation wizard, suggest you to register Moodle's
    ![Moodle language setting](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-languageset-websoft9.png)
 3. Set it by yourself
    * Language settings: choose your language online
-   * Language customisation: edit your language files online
+   * Language customization: edit your language files online
    * Language packs: upload your language packs
 
 ## Moodle mobile

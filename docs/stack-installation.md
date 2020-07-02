@@ -34,6 +34,8 @@ If you have completed the Moodle deployment on Cloud Platform, the following ste
 8. Set administrator account
    ![Moodle set administrator account](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md08.png)
 
+   > Email is your system ID, not collected by anyone because it stored in your Cloud Server
+
 9. Set site name, short name, front page summary...
    ![Moodle set site information](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/md09.png)
 

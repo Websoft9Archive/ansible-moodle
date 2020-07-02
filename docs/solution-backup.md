@@ -43,7 +43,7 @@ Manual backup for application is based on the **Exporting source code and databa
 - Backup scope: Source code and database of application
 - Backup effect: Good
 - Backup frequency: You can operate when you need
-- Recovery methond: Import
+- Recovery method: Import
 - Skill requirement: Easy 
 - Automation: manual
 ```

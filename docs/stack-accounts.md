@@ -4,7 +4,7 @@ These accounts are required for Moodle image installation and configuration
 
 ## Moodle
 
-Administrator account is set by yourselft at the time of Moodle installation wizard
+Administrator account is set by yourself at the time of Moodle installation wizard
 
 ## MySQL
 
