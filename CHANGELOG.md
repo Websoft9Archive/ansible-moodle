@@ -20,10 +20,7 @@
 
 ### Features
 
-* 
-
+* 2020-08-15  Change to phpMyAdmin on Docker
 * 2020-02-14  测试moodle跑通性
-
 * 2020-02-13  格式化变量模板
-
 * 2020-02-12  格式化整个ansible-moodle项目
