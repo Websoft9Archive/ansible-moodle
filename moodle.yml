@@ -13,7 +13,6 @@
       default: 1
 
   vars:
-
     webs_select:
       '1': 'apache'
       '2': 'nginx'
