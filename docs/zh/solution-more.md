@@ -72,3 +72,14 @@ Moodle 是一个非常灵活的平台，大部分核心功能以插件的形式�
 4. 通过[插件市场](https://moodle.org/plugins/)寻找所需的插件，然后安装它们
 
 > 更多插件管理查看官方文档 [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
+
+
+## 修改密码方式：修改数据库中的密码字段
+
+如果不能发邮件，请登录数据库管理面板 phpMyAdmin 进行修改
+
+1. 登录 phpMyAdmin，并找到你的网站数据库下的 *mdl_user*表
+2. 编辑用户：找到对应用户password字段，双击编辑
+   用`21232f297a57a5a743894a0e4a801fc3`替换之
+3. 点击【执行】
+4. 新的密码为`admin`
