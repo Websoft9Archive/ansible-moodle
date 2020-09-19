@@ -3,9 +3,12 @@ region: "0"
 common_os_support: ["CentOS", "Amazon"]
 
 apache_certbot: True
-nginx_certbot: True
 apache_appname: "moodle"
+apache_vhost_mode: "www"
+
+nginx_certbot: True
 nginx_appname: "moodle"
+nginx_vhost_mode: "www"
 
 mysql_remote: True
 mysql_version: "5.7"       
