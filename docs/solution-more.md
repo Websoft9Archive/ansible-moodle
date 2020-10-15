@@ -62,7 +62,7 @@ Once completed your Moodle installation wizard, suggest you to register Moodle's
 6. Open the Moodle app in your phone, configure the Moodle's URL to your app and start to use it
    ![moodle-apps](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-mobile-websoft9.png)
 
-## Moodle plugins
+<!-- ## Moodle plugins
 
 Moodle is very scalable platform, most of function were as plugins. Moodle have installed 400+ plugins by default and you can install plugins from [Plugins Marketplace](https://moodle.org/plugins/) to extend your functions
 
@@ -74,6 +74,6 @@ Moodle is very scalable platform, most of function were as plugins. Moodle have 
 5. Start to install plugins in the Moodle's console
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-intallplugins001-websoft9.png)
 6. Upload plugin online
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-intallplugins-uploadfile-websoft9.png) 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-intallplugins-uploadfile-websoft9.png)  -->
 
 > More details about manage plugins please refer to official docs [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
