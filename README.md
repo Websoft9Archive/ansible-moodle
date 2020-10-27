@@ -27,7 +27,7 @@
 本项目通过下载 Moodle 源码进行安装，下载链接存储在：[role/moodle/default/main.yml](/roles/moodle/defaults/main.yml)。我们会定期检查测试官方版本的可用性，尽可能保证用户可以顺利安装最新版。
 
 ```
-moodle_download_url: "https://download.moodle.org/download.php/direct/stable38/moodle-latest-38.zip"
+moodle_download_url: "https://download.moodle.org/download.php/direct/stable38/moodle-latest-39.zip"
 ```
 
 如果你发现不是最新版本，请查看 [Moodle 下载页面](https://download.moodle.org/releases/latest/) 获取最新版源码下载链接，再修改 [main.yml](/roles/moodle/defaults/main.yml) 中的 `moodle_download_url` 变量值即可安装最新版本的 Moodle。
