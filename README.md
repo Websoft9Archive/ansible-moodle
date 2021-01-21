@@ -1,7 +1,7 @@
 
 # Moodle 自动化安装与部署
 
-本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [Moodle](https://moodle.com/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 Moodle，让原本复杂的安装过程变得没有任何技术门槛。  
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [Moodle](https://moodle.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 Moodle，让原本复杂的安装过程变得没有任何技术门槛。  
 
 本项目是开源项目，采用 LGPL3.0 开源协议。
 
@@ -15,6 +15,8 @@
 | 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 | 可选 |
 | 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
 | 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
+
+更多配置要求请参照[官方文档](https://docs.moodle.org/310/en/Installation_quick_guide#Basic_Requirements)
 
 ## 组件
 
