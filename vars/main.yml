@@ -25,7 +25,7 @@ mysql_users:
 docker_applications: 
   - phpmyadmin
 
-php_version: "7.2"
+php_version: "7.4"
 
 # init all users password for MySQL
 init_db: 
