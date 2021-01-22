@@ -68,8 +68,9 @@ Moodle 是一个非常灵活的平台，大部分核心功能以插件的形式�
 1. 以管理员身份登录 Moodle 后台
 2. 依次打开：【网站管理】>【插件】
    ![moodle 插件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-plugins-websoft9.png)
-3. 点击【插件概括】，列出默认安装的插件，可以进行停用、卸载等操作
-4. 通过[插件市场](https://moodle.org/plugins/)寻找所需的插件，然后安装它们
+3. 点击【插件概况】，列出默认安装的插件，可以进行停用、卸载等操作
+   ![moodle 插件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-plugininfo-websoft9.png)
+4. 通过[插件概况](https://moodle.org/plugins/)寻找所需的插件，然后安装它们
 
 > 更多插件管理查看官方文档 [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
 
