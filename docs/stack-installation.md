@@ -46,6 +46,8 @@ If you have completed the Moodle deployment on Cloud Platform, the following ste
 
 > More useful Moodle guide, please refer to [Moodle Documentation](https://docs.moodle.org)
 
+## Moodle Setup Wizard
+
 ## Q&A
 
 #### I can't visit the start page of Moodle?

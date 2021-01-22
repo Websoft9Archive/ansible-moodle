@@ -77,3 +77,33 @@ Moodle is very scalable platform, most of function were as plugins. Moodle have 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-intallplugins-uploadfile-websoft9.png) 
 
 > More details about manage plugins please refer to official docs [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
+
+## Resetting Password
+
+There are two main measures to reset Moodle's password.
+
+### Changing password
+
+Take the steps below:
+
+1. log in the Moodle console, click 【Profile】 link of user icon on the top menu, then click the **setting icon**
+  ![Moodle console modify password](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-modifypw-websoft9.png)
+
+2. start to change the password.
+
+### Forgot Password
+
+If you have forgotten the password of Moodle, two methods for you tor retrieve it:
+
+* Retrieve it by Email from login page (you must completed the [SMTP settings](/zh/solution-smtp.md))
+* Retrieve it by modify database
+
+Follow the steps of retrieve database by modify database:
+
+1. Login [phpMyAdmin](/admin-mysql.md), and find the database table *mdl_user*
+
+  ![Moodle user table](https://libs.websoft9.com/Websoft9/DocsPicture/en/moodle/moodle-phpmyadminuser-websoft9.png)
+
+2. Edit the 【admin】user, replace the column `password` 's value to `21232f297a57a5a743894a0e4a801fc3`
+
+3. Click 【Go】 button, the password has been set to `admin`

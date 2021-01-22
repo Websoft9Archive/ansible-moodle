@@ -8,6 +8,10 @@ Yes
 
 UTF-8
 
+#### Can I install plugins of Moodle online?
+
+Yes, if you have signed in Moodle you can install plugins from Console directly
+
 #### What the difference between the Moodle(LAMP) and Moodle(LEMP) ?
 
 LAMP is using Apache as Web Server for your Moodle  

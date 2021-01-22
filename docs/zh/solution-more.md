@@ -65,22 +65,54 @@ Moodle 初始化安装完成之后，建议注册成为 Moodle 官方网站的�
 
 Moodle 是一个非常灵活的平台，大部分核心功能以插件的形式存在，系统默认安装了400多个插件。同时，官方提供了[插件市场](https://moodle.org/plugins/)供用户作用更多功能扩展。
 
-1. 以管理员身份登录 Moodle 后台
-2. 依次打开：【网站管理】>【插件】
+1. [注册 Moodle 官方账号](/zh/solution-more.html#moodle-注册)，打通你的 Moodle 与官方的连接，便于在线安装插件。
+
+2. 以管理员身份登录 Moodle 后台
+
+3. 依次打开：【网站管理】>【插件】，会看到**安装插件**和**插件概况**两个链接
    ![moodle 插件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-plugins-websoft9.png)
-3. 点击【插件概况】，列出默认安装的插件，可以进行停用、卸载等操作
-   ![moodle 插件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-plugininfo-websoft9.png)
-4. 通过[插件概况](https://moodle.org/plugins/)寻找所需的插件，然后安装它们
+
+   * 安装插件：安装新插件入口
+   * 插件概况：查看已经安装的插件列表
+
+4. 点击【安装插件】，提供**从Moodle插件目录安装插件**和**从ZIP文件中安装插件**两种安装插件的方式
+   ![moodle 安装插件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-pluginsmk-websoft9.png)
+
+   * 从Moodle插件目录安装插件：自动跳转并登录到 Moodle 的[官方插件市场](https://moodle.org/plugins/)，便可以在线安装
+   * 从ZIP文件中安装插件：需提前下载插件压缩文件，再从此处**上传**安装
+
+5. 点击【插件概况】，列出默认安装的插件，可以进行停用、卸载等操作
+   ![moodle 插件概况](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-plugininfo-websoft9.png)
+   
+6. 点击[插件概况](https://moodle.org/plugins/)寻找所需的插件，然后安装它们
 
 > 更多插件管理查看官方文档 [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
 
 
-## 修改密码方式：修改数据库中的密码字段
+## 重置密码
 
-如果不能发邮件，请登录数据库管理面板 phpMyAdmin 进行修改
+常用的 Moodle 重置密码相关的操作主要有修改密码和找回密码两种类型：
 
-1. 登录 phpMyAdmin，并找到你的网站数据库下的 *mdl_user*表
-2. 编辑用户：找到对应用户password字段，双击编辑
-   用`21232f297a57a5a743894a0e4a801fc3`替换之
-3. 点击【执行】
-4. 新的密码为`admin`
+### 修改密码
+
+1. 登录 Moodle 后台，点击头像，进入【个人档案】设置下的**小齿轮图标**
+  ![Moodle 修改密码](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-modifypw-websoft9.png)
+
+2. 点击【更改密码】链接，开始修改密码
+
+### 找回密码
+
+如果用户忘记了密码，有两种找回密码的方案：
+
+* 登录界面通过邮件找回密码（需提前完成 [SMTP 设置](/zh/solution-smtp.md)）
+* 数据库中重置密码两种方案
+
+下面介绍通过数据库找回密码的方案：
+
+1. 登录 [phpMyAdmin](/zh/admin-mysql.md)，并找到你的网站数据库下的 *mdl_user*表
+
+  ![Moodle user表](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-phpmyadminuser-websoft9.png)
+
+2. 编辑【admin】用户，将其中的 `password` 字段的值用 `21232f297a57a5a743894a0e4a801fc3` 替换
+
+3. 点击【执行】，新的密码就被重置为`admin`

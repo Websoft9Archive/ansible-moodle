@@ -31,12 +31,16 @@
 
 8. 跟随安装提示直到完成，过程中尽量选择默认设置，勾选安装所有模块
 
-9. 系统完成最后一步安装，建议进入Moodle后台（以管理身份登录即进入后台），体验完整功能 
+9. 系统完成最后一步安装，建议进入 Moodle 后台（以管理身份登录即进入后台），体验完整功能 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-install007-websoft9.png)
 
-10. [注册 Moodle 官方账号](/zh/solution-more.html#moodle-注册)，打通你的 Moodle 与官方的连接
+10. [注册 Moodle 官方账号](/zh/solution-more.html#moodle-注册)，打通你的 Moodle 与官方的连接，便于在线安装插件。
 
 > 需要了解更多Moodle的使用，请参考官方文档：[Moodle Documentation](https://docs.moodle.org)
+
+## Moodle 入门向导
+
+下面通过一个创建一个课程范例，来快速介绍 Moodle 的使用：
 
 ## 常见问题
 
