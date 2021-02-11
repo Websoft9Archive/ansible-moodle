@@ -28,4 +28,15 @@ apt update && apt upgrade -y
 
 Moodle provided multiple upgrade methods, includes: automatic upgrade, upload source code for upgrading, using CLI for upgrading
 
+The following steps will introduce how to upgrade by CLI:
+
+1. Use **SSH** to connect your Moodle Server
+
+2. Run the following commands for upgrading
+   ```
+   cd /data/wwwroot/moodle/admin/cli
+   php upgrade.php
+   ```
+3. The system will start upgrade
+
 More detail please refer to Moodle official docs [Moodle Upgrading](https://docs.moodle.org/37/en/Upgrading)

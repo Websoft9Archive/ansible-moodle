@@ -24,6 +24,15 @@ apt update && apt upgrade -y
 
 ## Moodle升级
 
-Moodle 官方提供了多种升级方式，包括自动升级、上传代码升级和命令升级等方式
+Moodle 官方提供了多种升级方式（[Moodle Upgrading](https://docs.moodle.org/37/en/Upgrading)），包括上传代码升级和命令升级等方式。  
 
-升级请参考官方文档 [Moodle Upgrading](https://docs.moodle.org/37/en/Upgrading)
+下面我们以命令行升级方式为例，介绍升级的大致方案：
+
+1. 提前做好代码和数据库备份
+
+2. 使用 SSH 远程登录到 Moodle 服务器，运行如下的命令开始升级：
+   ```
+   cd /data/wwwroot/moodle/admin/cli
+   php upgrade.php
+   ```
+3. 等待升级完成

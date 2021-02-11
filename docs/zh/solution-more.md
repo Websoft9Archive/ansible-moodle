@@ -88,6 +88,21 @@ Moodle 是一个非常灵活的平台，大部分核心功能以插件的形式�
 
 > 更多插件管理查看官方文档 [Moodle Plugins](https://docs.moodle.org/37/en/Installing_plugins)
 
+## Moodle 主题
+
+Moodle 主题实际上是一个插件，因此需要安装新主题，必须通过【安装插件】的方式先进行安装。  
+
+1. 以管理员身份登录 Moodle
+2. 依次打开：【网站管理】>【插件】，进入插件市场后，选择【Theme】类型的插件
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-mktheme-websoft9.png)
+
+3. 在线安装所需的主题
+
+3. 打开【网站管理】>【外观】>【主题选择器】
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-addtheme001-websoft9.png)
+
+4. 点击【更改主题】即可完成主题更换
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/moodle/moodle-addtheme002-websoft9.png)
 
 ## 重置密码
 
