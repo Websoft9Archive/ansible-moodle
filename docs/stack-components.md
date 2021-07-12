@@ -63,6 +63,7 @@ The following are the ports you may use:
 | MySQL | 3306 | Remote connect MySQL | Optional |
 | HTTP | 80 | HTTP requests for Moodle | Required |
 | HTTPS | 443 | HTTPS requests Moodle | Optional |
+| phpMyAdmin on Docker | 9090 | Web managment GUI for MySQL | Optional |
 
 ## Version
 
