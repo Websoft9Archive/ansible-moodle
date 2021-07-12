@@ -54,3 +54,8 @@
 
   - name: restart php-fpm
     service: name=php-fpm state=restarted
+
+# check version
+- name: Check moodle version
+  shell: |
+    sudo echo "moodle version" $(echo {{moodle_download_url}} |awk -F - '{print $2}') |tee -a /data/logs/install_version.txt'
