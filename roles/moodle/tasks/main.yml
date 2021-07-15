@@ -58,4 +58,4 @@
 # check version
 - name: Check moodle version
   shell: |
-    sudo echo "moodle version" $(cat /data/wwwroot/moodle/version.php | grep "\$release" | grep -Eo "[0-9]*\.[0-9]*") |tee -a /data/logs/install_version.txt
+    sudo echo "moodle version:" $(cat /data/wwwroot/moodle/version.php | grep "\$release" | grep -Eo "[0-9]*\.[0-9]*") |tee -a /data/logs/install_version.txt
