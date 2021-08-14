@@ -42,6 +42,66 @@
 
 下面通过一个创建一个课程范例，来快速介绍 Moodle 的使用：
 
+Moodle 是以课程为中心的组织模式，围绕课程的创建、关联老师和学生，开展教学和学习活动，来构建强大的在线学习管理平台。Moodle 通过对课程关联资源和活动，来设置课程的PPT、视频等教学资源和作业、考试、反馈等教学活动。Moodle 还有提供很多实用的功能，如更多的系统选项、课程能力模型、成绩报告及更多的课程活动等。
+
+**角色**：Moodle 系统的主要角色有3类，分别是管理员admin，老师，学生。
+
+管理员拥有最高权限，是系统管理员和学校校长，负责系统、成员、课程、权限分配等管理。
+
+**课程**：课程是 Moodle 的核心要素，也可以理解为班级。
+
+- 通过课程关联学生和老师，老师开展教学管理，学生开展学习、考试、讨论等学习活动；
+
+- 通过课程关联资源和活动，资源如教学PPT、音像、题库等，活动如作业、测试、反馈、评价等教学活动；
+
+1、系统管理：登录进入系统，选择【网站管理】进行系统管理、用户管理及课程管理等。
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-system-manage-websoft9.png)
+
+2、用户管理：进入【网站管理】后，通过【用户】选项，添加用户
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-user-manage-websoft9.png)
+   
+3、添加课程：进入【网站管理】后，通过【课程】选项，添加新课程
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-manage-websoft9.png)
+
+4、课程管理：通过【站点首页】 点击【可用的课程】 java 进入课程管理
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-manage1-websoft9.png)
+   
+   在课程管理主页，通过【设置】【更多】进行课程管理
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-manage2-websoft9.png)
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-manage3-websoft9.png)
+   
+5、课程关联老师和学生：通过【参与人】设置，关联老师和学生。点击【参与人】进入人员管理，通过【加入用户】选择用户参与课程，编辑【角色】设置用户角色
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-teacher-student-websoft9.png)
+   
+6、课程关联资源和活动：点击课程名称，进入课程主页，点击【打开编辑功能】，关联课程资源和活动
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-resource-websoft9.png)
+   
+   通过设置课程的章节、主题，然后点击章节右下方的【添加一个活动或资源】，可以是文件资源也可以是考试等教学活动
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-resource1-websoft9.png)
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-resource2-websoft9.png)
+   
+7、题库管理：测试与题库管理：Moodle 可以方便的添加测试，测试可以从题库中随机选题，也可以现场组卷。通过【更多】进入课程主页，选择下方题库进行题库管理
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-question-websoft9.png)
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-question1-websoft9.png)
+   
+   新建题目，把正确的选项的得分设为100%就是设置正确答案
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-question2-websoft9.png)
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-question3-websoft9.png)
+   
+8、测试管理：测试管理是针对某个章节，添加【测试】活动，组织题目，开展课程测试
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-test-websoft9.png)
+   
+   添加测试，命名保存
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-test1-websoft9.png)
+   
+   编辑测试，通过“添加”设置试题及细节
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-test2-websoft9.png)
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-test3-websoft9.png)
+   
+   设置完后，在对应的“基础语法”章节中有了“Test3”的教学测试活动，学生可以参与考试了
+   ![img](https://libs.websoft9.com/Websoft9/blog/tmp/moodle/zh/moodle-course-test4-websoft9.png)
+   
+
 ## 常见问题
 
 #### 浏览器打开IP地址，无法访问 Moodle（白屏没有结果）？
