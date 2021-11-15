@@ -9,5 +9,5 @@ moodle_db_password: "123456"
 moodle_name: "moodle"
 moodle_title: "Moodle"
 #下载链接需定期维护
-moodle_download_url: "https://download.moodle.org/stable311/moodle-3.11.2.zip"
+moodle_download_url: "https://download.moodle.org/stable311/moodle-3.11.4.zip"
                       
